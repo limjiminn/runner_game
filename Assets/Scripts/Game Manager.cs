@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject GoldenSpawner;
 
-
     public Player PlayerScript;
 
     public TMP_Text ScoreText;

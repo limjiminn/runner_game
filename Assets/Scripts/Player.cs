@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     public BoxCollider2D PlayerCollider;
 
+    public GameObject fever;
+
     private bool isGrounded = true;
 
     public bool isInbvincible = false;
@@ -51,12 +53,13 @@ public class Player : MonoBehaviour
     void StartInvincible()
     {
         isInbvincible = true;
-
+        fever.SetActive(true);
         Invoke("StopInvincible", 5f);
     }
 
     void StopInvincible()
     {
+        fever.SetActive(false);
         isInbvincible = false;
     }
 
@@ -81,8 +84,9 @@ public class Player : MonoBehaviour
             if (!isInbvincible)
             {
             Destroy(collision.gameObject);
-            }
             Hit();
+            }
+           
         }
         else if (collision.gameObject.tag == "food")
         {

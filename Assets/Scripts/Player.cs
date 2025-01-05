@@ -54,11 +54,13 @@ public class Player : MonoBehaviour
     {
         isInbvincible = true;
         fever.SetActive(true);
+        PlayAnimator.SetInteger("state", 3);
         Invoke("StopInvincible", 5f);
     }
 
     void StopInvincible()
     {
+        PlayAnimator.SetInteger("state", 4);
         fever.SetActive(false);
         isInbvincible = false;
     }
